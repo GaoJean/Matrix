@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="en">
+<!-- /home/disconf/war/html -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Disconf - 分布式配置管理平台</title>
+
+        <link rel="stylesheet" href="dep/bootstrap/css/bootstrap.css" />
+        
+        <!--[if lte IE 6]>
+        <link rel="stylesheet" href="dep/bootstrap/css/bootstrap-ie6.css" />
+        <![endif]-->
+        <!--[if lte IE 7]>
+        <link rel="stylesheet" href="dep/bootstrap/css/ie.css" />
+        <![endif]-->
+        <![if !IE]>
+        <link rel="stylesheet" href="dep/bootstrap/css/noie.css" />
+        <![endif]>
+        <link rel="stylesheet" href="dep/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/project.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/disconf.css">
+        <link rel="stylesheet" href="assets/css/common.css">
+        <link rel="stylesheet" href="assets/css/manage.css">
+        <link rel="stylesheet" href="public/css/pagination.css">
+    </head>
+
+    <body>
+            <div class="navbar navbar-fixed-top clearfix">
+            <div class="header">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="nav-collapse collapse">
+
+                        <a id="brand_url" href="/main.html" class="brand" style="margin-left:0px;padding:8px;"> <span class="zu-top-nav-link">Matrix</span> </a>
+
+                        <span class="span2"> </span>
+                        <form class="navbar-form pull-left">
+                            <button class="monitorButton"   style=""  onclick="window.open('http://123.57.228.235:8082/dleye-web/infolist.html', '_blank');">
+                                <img src="assets/img/monitor.jpg" alt=""> <b>丹露监控</b>
+                            </button>
+                        </form>
+                        
+                        <ul class="nav pull-right" >
+                            
+                            <div class="login-yes"  style="display:none;padding:10px;">
+                                <li style="display:inline;">
+                                    <a href="#">
+                                        <span class="zu-top-nav-link loginName" id="username"></span>
+                                    </a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <li style="display:inline;">
+                                    <a href="#" id="manage">
+                                        <span >管理</span>
+                                    </a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <li style="display:inline;">
+                                    <a href="/modifypassword.html">
+                                        <span class="zu-top-nav-link" >修改密码</span>
+                                    </a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <li style="display:inline;">
+                                    <a href="#" id="signout">
+                                        <span class="zu-top-nav-link" >退出</span>
+                                    </a>
+                                </li>
+                            </div>
+                            
+                            <div class="login-no"  style="padding:10px;">
+                                <li style="display:inline;">
+                                    <a href="/login.html"><span class="zu-top-nav-link">登录</span></a>
+                                </li>   
+                            </div>
+                            
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    
+
+<div ng-app="myApp" ng-controller="namesCtrl">
+<div id="Wrapper" class="clearfix">
+    <div id="Main" style="margin-top:50px;">
+        <div class="container-fluid">
+            <div class="row-fluid" style="min-height:400px;">
+            <div class="container subTitle">
+                <img src="assets/img/return.jpg" alt="">
+                <span  class="return return-icon">返回</span>
+
+                <div class="add dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="createButton">新建+<b class="caret"></b></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><span  onclick="window.location.href='/newapp.html'">新建APP</span></li>
+                        <li><span onclick="window.location.href='/newconfig_item.html'">新建配置项</span></li>
+                        <li><span onclick="window.location.href='/newconfig_file.html'">新建配置文件</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 下拉列表选择环境 -->
+            <div class="sidebar span2" style="float:left;overflow:visible;">
+
+                <ul id="envChoice" class="environment" >
+                	<li>环境  <img src="assets/img/down.jpg" alt=""></li>
+                    <li ng-repeat="x in items " id="{{x.id}}">
+                        <span   >{{x.name}} 环境 </span>
+                    </li>
+                </ul>                           
+            </div>
+             <!-- 微服务管理 -->
+             <div class="manage">
+                 <ul class="appManage">
+                    <li class="th">
+                        <div class="app">
+                             <span>微服务</span>
+                        </div>
+                        <div class="handle">
+                            <span>操作</span>
+                        </div>
+                    </li>
+                 </ul>
+                <!-- 版本号管理 -->
+                 <ul class="versionsManage">
+                    <li class="tversion">
+                        <div class="app">
+                             <span>版本号</span>
+                        </div>
+                        <div class="handle">
+                            <span>操作</span>
+                        </div>
+                    </li>
+                 </ul>  
+                              
+             </div>
+             
+        <div ng-app="myApp" ng-controller="namesCtrl">
+            <!-- 操作记录 -->
+            <div class="container history">
+                <!--  分页插件 -->
+                <div id="appPagination" class="pagination"></div><div id="versionsPagination" class="pagination"></div> 
+                <div class="historyTitle">
+                    <strong>操作记录（最近5条）</strong>
+
+                </div>
+                <div >
+                    <ul class="historyDetails">
+                        <li ng-repeat="log in logs">
+                            {{log.description}}
+                        </li>
+                    </ul>                    
+                    <div class="jump">
+                        <img src="assets/img/jump.jpg" alt="" for="gotoRedmine">
+                        <a href="http://idanlu.com:3000/issues/6369" id="gotoRedmine" target="_blank">跳转至redmine</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 隐藏的复制弹窗 -->
+            <div class="copy" style="display:none">
+               
+                    <ul class="env_content">
+                         <li>
+                            <span>请选择要复制到的位置：</span>
+                        </li>
+                        <li >
+                            <span style="margin-left: 13px;">环境：</span>
+                            <select name="evn_copy" id="evn_copy">
+                                <option ng-repeat="x in items " value="{{x.id}}">
+                                    <span >{{x.name}} 环境 </span>
+                                </option>
+                            </select>
+                        </li>
+                        <li>
+                            <span>微服务：</span>
+                            <select name="app_copy" id="app_copy">
+                                <option ng-repeat="app in apps " value="{{app.id}}">
+                                    <span >{{app.name}} 服务 </span>
+                                </option>
+                            </select>
+                        </li>   
+                        <li>
+                            <span style="margin-left: 60px;">新建版本号：</span>
+                            <br/>
+                            <input type="text" id="version_copy" style="margin-left: 60px">
+                            <span id="copy_error_info" style="margin-left: 60px;color:red;display: none">版本号不能为空</span>
+                        </li>                
+                    </ul>
+                
+            </div>
+        </div>   <!-- angular.js -->
+            <!--  -->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+        
+	<div class="footer">
+		<ul>
+			<li>Copying@2000-2014丹露有限公司 All Rights Reserved</li>
+			<li> 丹露备案/许可证号：ICP备09096283号</li>
+		</ul>
+	</div>	
+        
+        <script src="assets/js/jquery-1.11.0.js"></script>
+        <script src="dep/jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
+        <script src="public/js/angular.min.js"></script>
+        <script src="dep/bootstrap/js/bootstrap.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/common.js"></script>
+        <script scr='public/js/layer.js'></script>
+        <script src="public/js/jquery.pagination.js"></script>
+
+        <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?c4578bda90040ec19ded56112b82246f";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+     
+        <script src="assets/js/manage.js"></script>
+        <script src='public/js/layer.js'></script>
+        <script src="assets/js/footer.js"></script>
+        
+    </body>
+</html>
+

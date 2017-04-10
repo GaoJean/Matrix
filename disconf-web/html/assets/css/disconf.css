@@ -1,0 +1,77 @@
+/* 导航栏  */
+#manage{
+	color: #eee;
+	font-weight: bold;
+}
+
+/* app 环境  */
+.environment{
+	text-align: right;
+}
+.environment img{
+	margin-left: 10px;
+}
+.environment li:hover {
+	color : white;
+	background: #445670;
+}
+#envSearchId{
+	width: 78px;
+	margin: 10px 0;
+	border: 1px solid;
+	border-radius: 0px;
+}
+#searchButton{
+	width: 30px;
+	border:1px solid;
+	border-left: none;
+	border-radius: 0px;
+}
+#envChoice li{
+	height: 30px;
+	padding-right: 15px;
+
+}
+#envChoice li a{
+	text-decoration: none;	
+	margin-right: 22px;
+	color: #445670;
+}
+/* 微服务环境 */
+#applist{
+	height:384px;
+	overflow: auto;
+	text-align: right;
+}
+#applist img{
+	margin-left: 10px;
+}
+#applist li {
+	background: #f5f5f5;
+	margin: 5px 0;
+	height: 30px;
+	vertical-align: middle;
+	line-height: 24px;
+	padding-right: 15px;
+}
+#applist li a{
+	height: 31px;
+	margin-right: 22px;	
+	color: black;
+	color: #445670;
+	display: inline-block;
+	text-decoration: none;
+}
+#applist li:hover {
+	color : white;
+	background: #445670;
+}
+#applist li:hover >a{
+	color: white;
+}
+.active {
+	color: white;
+	background-color: #445670 !important;
+	/*border-left: 1px solid #445670 ;*/
+}
+

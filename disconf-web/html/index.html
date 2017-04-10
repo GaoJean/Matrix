@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Martrix</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/bootstrap.js"></script>
+    <script src="public/js/layer.js"></script>
+
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/common.js"></script>
+
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div id="matrixName">
+                <span>Matrix</span>
+            </div>
+            <div id="monitor">
+                <span>丹露监控</span>
+            </div>
+
+        </div> <!-- container -->
+    </div> <!-- header -->
+
+    <div class="center">
+        <div class="guidance">
+            <img src="assets/img/guidance.jpg" alt="">
+            <ul>
+                <li>-部署动态化</li>
+                <li>-统一管理</li>
+                <li>-异构包部署统一化</li>
+                <li>-支持war包、jar包传参数启动</li>
+                <li>-操作记录推送</li>
+            </ul>
+            <button id="loginButton">登录</button>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li>Copying@2000-2014丹露有限公司 All Rights Reserved</li>
+            <li> 丹露备案/许可证号：ICP备09096283号</li>
+        </ul>
+    </div>  
+</body>
+<script>
+    $(function(){
+        // layer.alert("欢迎使用matrix");
+         $('#loginButton').click(function(){
+
+            window.location.href="login.html"; 
+         })
+    })
+</script>
+
+
+</html>

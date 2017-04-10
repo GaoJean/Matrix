@@ -1,0 +1,75 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Microsoft YaHei" ! important;
+	font-size: 14px;
+}
+.body{
+	background-color: #fbfbfb;
+}
+.container{
+	width: 1000px;
+	margin: 0 auto ;
+}
+.subTitle{
+	display: inline-block;
+	height: 25px;
+	margin: 10px;
+}
+.subTitle img{
+	margin-top: -4px;
+	margin-left: 162px;
+}
+.subTitle span{
+	margin-top: 5px;
+	margin-left: 0px;
+}
+.add{
+	display: inline-block;
+	margin-left: 640px;
+}
+.add ul{
+	border: 1px solid #445670;
+    border-radius: 0px;
+    margin-left: -120px;
+    padding: 0px;
+    background-color: white;
+}
+.add li{
+	line-height: 30px;
+	text-align: right;
+	padding-right: 15px;
+}
+
+.add li:hover{
+	background-color: #445670;
+	color: white;
+}
+.createButton{
+	color: #445670;
+}
+/* 头部*/
+.header{
+	width: 100%;
+	height: 47px;
+	text-align: center;
+	background-color: rgb(68,86,112);
+	position: relative;
+}
+.monitorButton{
+	margin-top: 5px;
+	background: none;
+}
+/* 尾部 */
+.footer{
+	width: 100%;
+	height: 90px;
+	position: fixed;
+	bottom: 0px;
+	text-align: center;
+	background-color: rgb(231,231,231);
+}
+.footer li{
+	margin-top: 10px;
+	color: rgb(188,188,204);
+}

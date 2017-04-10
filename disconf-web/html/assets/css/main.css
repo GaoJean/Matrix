@@ -1,0 +1,32 @@
+.dropdown-menu {
+	padding: 0px;
+	border-radius: 0px;
+	margin-top: 18px;
+}
+.dropdown-menu li{
+    
+    text-align: left;
+    background: #445670;
+    opacity: 0.8;
+    color:white;
+    padding: 10px 10px 0px;
+}
+.dropdown-menu li:hover{
+	color : #445670;
+	background : white !important;
+}
+
+.zkButton{
+	width: 100px;
+	height: 30px;
+	float: right;
+	background-color: #f3f3f3;
+	border:1px solid #445670;
+	border-radius: 0px;
+	margin-left : 15px;
+}
+.zkButton a{
+	color: #445670;
+	text-decoration: none;
+
+}

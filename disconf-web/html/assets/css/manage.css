@@ -1,0 +1,160 @@
+.appManage{
+	position: absolute;
+	margin-left: 160px;
+	width: 386px;
+	height: 410px;
+	background-color: #f7f7f7;
+}
+.appManage li{
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #d0d0d0;
+}
+.appManage li:hover{
+	background-color:  #e2eaf7;
+}
+.app{
+	width: 50%;
+	text-align: center;
+	float: left;
+	/*background-color: #f7f7f7;*/
+}
+.handle{
+	width: 50%;
+	text-align: center;
+	float: left;
+	/*background-color: #f7f7f7;*/
+}
+
+.th >.app{
+	width: 50%;
+	text-align: center;
+	float: left;
+	background-color: #e2eaf7;
+}
+.th >.handle{
+	width: 50%;
+	text-align: center;
+	float: left;
+	background-color: #e2eaf7;
+}
+/* 版本号管理 */
+.versionsManage{
+	position: absolute;
+	margin-left: 546px;
+	width: 386px;
+	height: 410px;
+	border-left:1px solid #e2e2e2;
+	background-color:  #f7f7f7;
+}
+
+.versionsManage li{
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #e2e2e2;
+}
+.versionsManage li:hover{
+	background-color: #e2e2e2;
+}
+.env{
+	width: 50%;
+	text-align: center;
+	float: left;
+}
+.handle{
+	width: 50%;
+	text-align: center;
+	float: left;
+}
+
+.tversion >.app{
+	width: 50%;
+	text-align: center;
+	float: left;
+	background-color: #e2e2e2;
+}
+.tversion >.handle{
+	width: 50%;
+	text-align: center;
+	float: left;
+	background-color: #e2e2e2;
+}
+
+/* 操作记录 */
+.history{
+	width: 775px;
+	margin-top: 410px;
+	margin-left: 160px;
+}
+.historyTitle{
+	margin-left: 0px;
+	height: 35px;
+	text-align: center;
+	background-color: lightgray;
+}
+.historyTitle strong{
+	line-height: 35px;
+}
+.historyDetails{
+	background-color: #f8f8f8;
+}
+.historyDetails li:hover{
+	background-color: #e2eaf7;
+}
+.historyDetails span{
+	line-height: 35px;
+	height: 35px;
+	margin-left: 20px;
+
+}
+/* 跳转到redmine */
+.jump{
+	margin-left: 600px;
+	margin-top: 10px;
+}
+.jump span{
+	margin-left: 0px;
+}
+/* 翻页 */
+.pagination{
+	margin: 0px;
+	background-color: #f7f7f7;
+}
+
+#appPagination{
+	/*margin-top: 380px;*/
+	
+	width: 386px;
+	text-align: center;
+	display: inline-block;
+}
+#versionsPagination{
+	/*margin-top: 380px;*/
+	background-color: #f7f7f7;
+	width: 386px;
+	text-align: center;
+	display: inline-block;
+}
+
+/* 复制 弹窗样式 */
+.env_content{
+	margin: 30px auto;
+	width: 300px;
+	height: 220px;
+}
+.env_content li{
+	line-height: 40px;
+}
+.env_content li select{
+	margin:auto;
+}
+
+/*
+	操作记录
+ */
+.historyDetails li{
+	line-height: 30px;
+	margin-left: 30px;
+	border-bottom: 1px solid #eee;
+	list-style: square;
+}

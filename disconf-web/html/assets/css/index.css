@@ -1,0 +1,25 @@
+.guidance{
+	width: 246px;
+	height: 340px;
+	margin: 200px auto;
+
+}
+.guidance ul li{
+	margin: 5px;
+	height: 30px;
+	list-style: none;
+	color: #445670;
+}
+#loginButton{
+	width: 70px;
+	height: 30px;
+	border:1px solid #445670;
+	border-radius: 0px;
+	margin: 50px 88px;
+}
+#loginButton{
+	color: white;
+	line-height: 30px;
+	text-decoration: none;
+}
+
