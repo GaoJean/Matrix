@@ -250,6 +250,9 @@ public class ConfigUpdateController extends BaseController {
     @RequestMapping(value = "/deleteConfig", method = RequestMethod.POST)
     @ResponseBody
     public JsonObjectBase deleteConfig(@Valid ConfVersoinListForm confVersionForm){
+        if(configValidator.validateRoleForDelete(confVersionForm.getVersionList())){
+            return buildSuccess("该用户操作权限不够！");
+        }
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("envId", confVersionForm.getEnvId());
         map.put("versionList", confVersionForm.getVersionList());

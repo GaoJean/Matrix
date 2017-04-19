@@ -1,5 +1,7 @@
 package com.baidu.disconf.web.web.config.validator;
 
+import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,7 @@ import com.baidu.disconf.web.service.app.service.AppMgr;
 import com.baidu.disconf.web.service.config.bo.Config;
 import com.baidu.disconf.web.service.config.form.ConfNewForm;
 import com.baidu.disconf.web.service.config.form.ConfNewItemForm;
+import com.baidu.disconf.web.service.config.form.VersionListForm;
 import com.baidu.disconf.web.service.config.service.ConfigFetchMgr;
 import com.baidu.disconf.web.service.config.service.ConfigMgr;
 import com.baidu.disconf.web.service.env.bo.Env;
@@ -237,6 +240,25 @@ public class ConfigValidator {
         if (!RoleId.equals(RoleConstant.ROLE_ADMIN)
             && version.equals(Constants.VERSION_ROOT)) {
             return true;
+        }
+        return false;
+    }
+
+    /**
+     * 主要是为了进行权限验证，只有管理员才有权利操作(不能删除0.0.1)
+     * @param versionList
+     * @return
+     */
+    public boolean validateRoleForDelete(List<String> versionList) {
+        Visitor visitor = ThreadContext.getSessionVisitor();
+        String RoleId = String.valueOf(visitor.getRoleId());
+        if(!RoleId.equals(RoleConstant.ROLE_ADMIN)){
+            return true;
+        }
+        for(String version : versionList){
+            if (version.equals(Constants.VERSION_ROOT)) {
+                return true;
+            }
         }
         return false;
     }
