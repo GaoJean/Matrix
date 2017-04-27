@@ -591,13 +591,10 @@ public class ConfigMgrImpl implements ConfigMgr {
     @Override
     public void deleteConfig(Map<String, Object> map) {
         long envId = (Long) map.get("envId");
-        List<String> versionList = new ArrayList<String>();
-        versionList = (List<String>) map.get("versionList");
-        for (String version : versionList) {
-            map.put("operation", Constants.DELETE);
-            configDao.deleteConfig(envId, version);
-            allOpertaerMgr.updateLog(map);
-        }
+        String version = (String) map.get("version");
+        map.put("operation", Constants.DELETE);
+        configDao.deleteConfig(envId, version);
+        allOpertaerMgr.updateLog(map);
     }
     /**
      * 复制文件

@@ -246,19 +246,14 @@ public class ConfigValidator {
 
     /**
      * 主要是为了进行权限验证，只有管理员才有权利操作(不能删除0.0.1)
-     * @param versionList
+     * @param version
      * @return
      */
-    public boolean validateRoleForDelete(List<String> versionList) {
+    public boolean validateRoleForDelete(String version) {
         Visitor visitor = ThreadContext.getSessionVisitor();
         String RoleId = String.valueOf(visitor.getRoleId());
-        if(!RoleId.equals(RoleConstant.ROLE_ADMIN)){
+        if (!RoleId.equals(RoleConstant.ROLE_ADMIN) || version.equals(Constants.VERSION_ROOT)) {
             return true;
-        }
-        for(String version : versionList){
-            if (version.equals(Constants.VERSION_ROOT)) {
-                return true;
-            }
         }
         return false;
     }
