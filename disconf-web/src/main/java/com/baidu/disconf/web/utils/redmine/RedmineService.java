@@ -46,5 +46,26 @@ public class RedmineService {
         System.out.println("Response Code:" + response.getStatusLine().getStatusCode());
 
     }
+    
+   /* @Test
+    public void sendRedmine() throws ClientProtocolException, IOException {
+        String desc = "测试1";
+        JSONObject jo = new JSONObject();
+        Issue issue = new Issue();
+        issue.setNotes(desc);
+        jo.put("issue", issue);
 
+        String url = Constants.REDMINE_URL + "?key=" + Constants.REDMINE_USER_KEY;
+        HttpClient client = HttpClientBuilder.create().build();
+        HttpPut put = new HttpPut(url);
+        put.setHeader("Content-type", "application/json;charset=utf-8");
+
+        StringEntity params = new StringEntity(jo.toString(), "utf-8");
+        put.setEntity(params);
+
+        HttpResponse response = client.execute(put);
+        System.out.println("Response Code:" + response.getStatusLine().getStatusCode());
+
+    }
+*/
 }

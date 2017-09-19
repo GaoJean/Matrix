@@ -53,18 +53,19 @@ public class RoleResourceMgrImpl implements RoleResourceMgr {
         List<RoleResource> roleResList = roleResDao.findAll();
         // 遍历列表，把数据按<url, <method, List<roleId>>>的形式加到infoMap
         for (RoleResource roleRes : roleResList) {
-
+            LOG.info(roleRes.toString());
             String urlPattern = roleRes.getUrlPattern();
             if (!urlPattern.endsWith(RoleResourceConstant.URL_SPLITOR)) {
                 urlPattern += RoleResourceConstant.URL_SPLITOR;
             }
-            // LOG.info(urlPattern);
+            LOG.info(urlPattern);
 
             Map<RequestMethod, List<Integer>> value = infoMap.get(urlPattern);
             if (value == null) {
                 value = new HashMap<RequestMethod, List<Integer>>();
                 infoMap.put(urlPattern, value);
             }
+            LOG.info(roleRes.getMethodMask());
             updateMethodMap(value, roleRes.getRoleId(), roleRes.getMethodMask());
         }
         return infoMap;
