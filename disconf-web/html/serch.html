@@ -1,0 +1,95 @@
+<!DOCTYPE HTML><!-- html5 -->
+<html>
+	<head>
+		<title>Disconf - 分布式配置管理平台</title>
+		<script type="text/javascript">
+			
+			//计算文档的可见高度
+			function windowHeight() {
+				var de = document.documentElement;
+				return self.innerHeight||(de && de.clientHeight)||document.body.clientHeight;
+			}
+		
+			//window.onresize是窗口改变大小的时候，因为窗口改变大小，文档的可见高度或宽度会变化。
+			window.onload=window.onresize=function(){
+				var wh=windowHeight();
+				document.getElementById("bdy").style.height = (wh-20)+"px";
+			}
+		</script>
+		<link rel="stylesheet" type="text/css" href="assets/css/serch.css" />
+		<script src="http://apps.bdimg.com/libs/angular.js/1.2.16/angular.min.js"></script>
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="bdy" ng-app="myApp">
+			<div class="nav">
+				<span class="sub1">Matrix</span>
+				<span class="sub2">监控</span>
+				<span class="sub3">登录</span>
+			</div>
+			<div class="main" ng-controller="SerchController" >
+				<div class="sub1">
+					<table cellpadding="5px" cellspacing="0" style="width:60%;position:relative;left:20%;">
+						<tr style="width:100%;">
+							<td style="width:10%">环境：</td>
+							<td style="width:30%">
+								<select class="env" ng-model="envValue" ng-options="act for act in envs" ng-change="myFunc(3)">
+									<option value="">--选择环境--</option>
+									<option value="env2">环境2</option>
+								</select>
+							</td>
+							<td style="width:10%">版本：</td>
+							<td style="width:30%">
+								<select class="version ng-model="envValue" ng-options="act for act in version" ">
+									<option value="">--选择版本--</option>
+									<option value="v1">版本1</option>
+									<option value="v2">版本2</option>
+								</select>
+							</td>
+							<td style="width:20%">
+								<button class="button black" ng-click="getData(3,'release-v2017.13')">提交</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="sub2">
+					<table border="1" cellpadding="10px" cellspacing="0" style="width:60%;height:auto;position:relative;left:20%;">
+						
+						<tr>
+							<th>APP</th>
+							<th>key</th>
+							<th>实例列表</th>
+						</tr>
+						<tr ng-repeat="x in tableData">
+							<td>{{x.name}}</td>
+							<td>{{x.key}}</td>
+							<td>{{x.machineSize}}</td>
+						
+						</tr>
+						<tr>
+							<td>dlmall</td>
+							<td>api.properties</td>
+							<td>0台</td>
+						</tr>
+						<tr>
+							<td>dlmall</td>
+							<td>api.properties</td>
+							<td>0台</td>
+						</tr>
+						<tr>
+							<td>dlmall</td>
+							<td>api.properties</td>
+							<td>0台</td>
+						</tr>
+						<tr>
+							<td>dlmall</td>
+							<td>api.properties</td>
+							<td>0台</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	<script src="assets/js/serch.js"></script>
+	</body>
+</html>
